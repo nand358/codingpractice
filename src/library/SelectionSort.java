@@ -1,12 +1,13 @@
 package library;
 
+import java.util.Arrays;
+
 /**
  * Created by anatarajan on 11/2/15.
  */
 public class SelectionSort {
 
-    public void sort(int[] a) {
-        int n = a.length;
+    public void sort(int[] a, int n) {
         for (int i = 0; i < n - 2; i++) {
             int iMin = i; // set current index as min
 
@@ -23,18 +24,15 @@ public class SelectionSort {
             a[i] = temp;
         }
 
-        System.out.println("Sorted Order: ");
-        for(int i = 0; i < n - 1; i++) {
-            System.out.print(a[i] + ", ");
-        }
-
-
+        System.out.print("Sorted Order: ");
+        System.out.println(Arrays.toString(a));
     }
 
     public static void main(String[] args) {
         int[] a = new int[]{7, 2, 5, 9, 4, 3, 1, 10};
-
+        System.out.print("UnSorted Order: ");
+        System.out.println(Arrays.toString(a));
         SelectionSort sorter = new SelectionSort();
-        sorter.sort(a);
+        sorter.sort(a, a.length);
     }
 }
